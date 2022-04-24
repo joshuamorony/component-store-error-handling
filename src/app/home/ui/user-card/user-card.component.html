@@ -1,0 +1,16 @@
+<ng-container *ngIf="user || err; else loading">
+  <ion-card *ngIf="user && !err">
+    <ion-card-content>
+      <p>{{ user }}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-note *ngIf="err"> {{ err }} </ion-note>
+</ng-container>
+
+<ng-template #loading>
+  <ion-card>
+    <ion-card-content>
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-card-content>
+  </ion-card>
+</ng-template>
